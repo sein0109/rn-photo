@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { BLACK, DANGER, WHITE } from '../colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Button, { ButtonTypes } from '../components/Button';
+
 export const AlertTypes = {
      SIGNOUT: 'SIGNOUT',
      DELETE_POST: 'DELETE_POST',

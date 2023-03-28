@@ -91,4 +91,5 @@ const defaultStyles = StyleSheet.create({
           lineHeight: 20,
      },
 });
+
 export default Button;

@@ -46,4 +46,5 @@ const styles = StyleSheet.create({
           borderBottomColor: GRAY.LIGHT,
      },
 });
+
 export default PostList;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { forwardRef, useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { GRAY, PRIMARY } from '../colors';
+
 export const InputTypes = {
      EMAIL: 'EMAIL',
      PASSWORD: 'PASSWORD',
@@ -39,6 +40,7 @@ export const ReturnKeyTypes = {
      DONE: 'done',
      NEXT: 'next',
 };
+
 const Input = forwardRef(({ inputType, styles, ...props }, ref) => {
      const {
           title,
@@ -47,8 +49,10 @@ const Input = forwardRef(({ inputType, styles, ...props }, ref) => {
           secureTextEntry,
           iconName: { active, inactive },
      } = InputTypeProps[inputType];
+
      const [isFocused, setIsFocused] = useState(false);
      const { value } = props;
+
      return (
           <View style={[defaultStyles.container, styles?.container]}>
                <Text
@@ -60,6 +64,7 @@ const Input = forwardRef(({ inputType, styles, ...props }, ref) => {
                >
                     {title}
                </Text>
+
                <View>
                     <TextInput
                          ref={ref}
@@ -94,11 +99,13 @@ const Input = forwardRef(({ inputType, styles, ...props }, ref) => {
      );
 });
 Input.displayName = 'Input';
+
 Input.propTypes = {
      inputType: PropTypes.oneOf(Object.values(InputTypes)),
      value: PropTypes.string,
      styles: PropTypes.object,
 };
+
 const defaultStyles = StyleSheet.create({
      container: {
           width: '100%',
@@ -120,4 +127,5 @@ const defaultStyles = StyleSheet.create({
           justifyContent: 'center',
      },
 });
+
 export default Input;
